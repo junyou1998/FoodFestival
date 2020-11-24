@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>食節</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style/index.css">
 </head>
+
 <body>
-    can It works?
+    <div id="app">
+        <div class="calendar">
+            <div class="board"></div>
+            <div class="paper">
+                <div class="day">{{festival_list.day}}</div>
+                <div class="content">
+                    <div class="festival">
+                        <p class="span"></p>
+                        {{festival_list.festival}}
+                    </div>
+                    <div class="suitable">
+                        <div class="wrapper">
+                            <div class="good">
+                                <span>宜</span>
+                                {{festival_list.good}}
+                            </div>
+                            <div class="bad">
+                                <span>忌</span>
+                                {{festival_list.bad}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-wrapper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" @click='change(0)'>春節</div>
+                    <div class="swiper-slide" @click='change(1)'>元宵節</div>
+                    <div class="swiper-slide" @click='change(2)'>清明節</div>
+                    <div class="swiper-slide" @click='change(3)'>端午節</div>
+                    <div class="swiper-slide" @click='change(4)'>七夕</div>
+                    <div class="swiper-slide" @click='change(5)'>中元節</div>
+                    <div class="swiper-slide" @click='change(6)'>中秋節</div>
+                    <div class="swiper-slide" @click='change(7)'>重陽節</div>
+                    <div class="swiper-slide" @click='change(8)'>冬至</div>
+                    <div class="swiper-slide" @click='change(9)'>除夕</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
