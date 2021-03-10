@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>食節</title>
+    <link rel="stylesheet" href="/style/story.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <nav v-on:mouseover="resize" v-on:mouseleave="resize">
+            <a class="logo" href="/">
+                <img src="/img/logo.svg" alt="">
+            </a>
+            <ul>
+                <li @click="change(0)">春節</li>
+                <li @click="change(1)">元宵節</li>
+                <li @click="change(2)">清明節</li>
+                <li id="test" @click="change(3)">端午節</li>
+                <li @click="change(4)">七夕</li>
+                <li @click="change(5)">中元節</li>
+                <li @click="change(6)">中秋節</li>
+                <li @click="change(7)">重陽節</li>
+                <li @click="change(8)">冬至</li>
+                <li @click="change(9)">除夕</li>
+            </ul>
+        </nav>
+        <section @wheel="next">
+            <div class="story_block expend" @click="expend(0,$event)">
+                <div class="tab">
+                    <div class="title first">{{festival.festival}}</div>
+                </div>
+                <div class="content hero_content">
+                    <div class="hero_image">
+                        <img v-bind:src="festival.hero.img" v-bind:alt="festival.hero.img">
+                    </div>
+                    <div class="description" v-html="festival.hero.content">
+                    </div>
+                </div>
+            </div>
+
+            <div class="story_block" v-for="(story,index) in festival.stories" @click="expend(index+1,$event)">
+                <div class="tab">
+                    <div class="title">
+                        {{story.title}}
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="illustration">
+                        <img v-bind:src="story.img" v-bind:alt="story.img">
+                    </div>
+                    <div class="text">
+                        <div class="heading">{{story.title}}</div>
+                        <div v-html="story.content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/story.js"></script>
+    <script src="../data.js"></script>
+</body>
+
+</html>

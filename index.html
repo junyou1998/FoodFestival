@@ -1,45 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.webmanifest">
     <title>食節</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/index.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
 </head>
 
 <body>
     <div id="app">
+        <div class="slogan">
+            <img src="/img/logo.svg" alt="">
+            <!-- fsdg -->
+            <div class="small">
+                <!-- 今仔日食啥物? -->
+            </div>
+        </div>
         <div class="calendar">
             <div class="board"></div>
-            <div class="paper">
-                <div class="day">{{festival_list.day}}</div>
-                <div class="content">
-                    <div class="festival">
-                        <p class="span"></p>
-                        {{festival_list.festival}}
+            <a v-bind:href="'/pages/story.html?festival=' + index">
+                <div class="paper">
+                    <div class="year">
+                        {{festival_list.year + "/" }}
+                        <span>{{festival_list.month}}月</span>
                     </div>
-                    <div class="suitable">
-                        <div class="wrapper">
-                            <div class="good">
-                                <span>宜</span>
-                                {{festival_list.good}}
-                            </div>
-                            <div class="bad">
-                                <span>忌</span>
-                                {{festival_list.bad}}
+                    <div class="day">{{festival_list.day}}</div>
+                    <div class="content">
+                        <div class="festival">
+                            <p class="span"></p>
+                            {{festival_list.festival}}
+                            <div class="date">{{festival_list.date}}</div>
+                        </div>
+                        <div class="suitable">
+                            <div class="wrapper">
+                                <div class="good">
+                                    <span>宜</span>
+                                    {{festival_list.good}}
+                                </div>
+                                <!-- <div class="bad">
+                                    <span>忌</span>
+                                    {{festival_list.bad}}
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
+
         </div>
 
         <div class="side-wrapper">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" @click='change(0)'>春節</div>
+                    <div class="swiper-slide" @click='change(0)'>新年</div>
                     <div class="swiper-slide" @click='change(1)'>元宵節</div>
                     <div class="swiper-slide" @click='change(2)'>清明節</div>
                     <div class="swiper-slide" @click='change(3)'>端午節</div>
@@ -56,6 +81,12 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/index.js"></script>
+    <pwa-install id="installComponent"></pwa-install>
+    <script async defer>
+        var installComponent = document.createElement("pwa-install");
+        document.body.appendChild(installComponent);
+        installComponent.getInstalledStatus();
+    </script>
 </body>
 
 </html>
