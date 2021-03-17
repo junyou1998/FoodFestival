@@ -170,6 +170,7 @@ nav {
         @media screen and (max-width: 768px){
             flex-direction: column;
             width: 100%;
+            padding: 15px;
         }
         .illustration,
         .text {
@@ -187,7 +188,7 @@ nav {
             }
             @media screen and (max-width: 768px){
                 flex: 1;
-                font-size: 16px;
+                font-size: 18px;
             }
         }
 
@@ -219,7 +220,8 @@ nav {
                 height: 60%;
                 @media screen and (max-width: 768px){
                     height: auto;
-                    width: 80%;
+                    width: 100%;
+                    text-align: center;
                 }
 
                 img {
@@ -242,7 +244,7 @@ nav {
                 padding: 0 20px;
                 @media screen and (max-width: 768px){
                     padding: 0;
-                    font-size: 16px;
+                    font-size: 20px;
                     flex: 1;
                     flex-grow: 1;
                     
