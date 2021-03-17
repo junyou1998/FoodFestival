@@ -60,12 +60,15 @@ let vm = new Vue({
 
         },
         expend(index, event) {
-            this.now_index = index
-            this.remove()
-            event.currentTarget.classList.add('expend')
-            if(!event.currentTarget.querySelector('.title').classList.contains('first'))
-            event.currentTarget.querySelector('.title').classList.add('hide')
-            this.resize()
+            if(window.innerWidth>=768){
+
+                this.now_index = index
+                this.remove()
+                event.currentTarget.classList.add('expend')
+                if(!event.currentTarget.querySelector('.title').classList.contains('first'))
+                event.currentTarget.querySelector('.title').classList.add('hide')
+                this.resize()
+            }
         },
         next(e) {
             if (!this.lock && window.innerWidth>=768) {
