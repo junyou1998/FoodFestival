@@ -321,6 +321,9 @@ nav {
         mix-blend-mode: exclusion;
 
     }
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 }
 .cursor-dot {
     position:absolute; 
@@ -333,6 +336,9 @@ nav {
     left:50%; 
     transform: translate(-50%,-50%) scale(1);
     pointer-events: none;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 }
 
 ::selection {

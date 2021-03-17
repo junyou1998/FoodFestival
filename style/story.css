@@ -402,6 +402,12 @@ nav ul li {
   mix-blend-mode: exclusion;
 }
 
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}
+
 .cursor-dot {
   position: absolute;
   background: #e48329;
@@ -414,6 +420,12 @@ nav ul li {
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .cursor-dot {
+    display: none;
+  }
 }
 
 ::-moz-selection {
