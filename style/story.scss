@@ -138,7 +138,10 @@ nav {
     transition: all 0.5s;
     border-left: 2px solid rgba(199,62,58,.5);
     overflow: hidden;
-
+    @media screen and (max-width: 768px){
+        overflow: visible;
+        width: 100%;
+    }
     .tab {
         width: 100px;
         height: 100%;
@@ -166,6 +169,7 @@ nav {
         height: 100%;
         @media screen and (max-width: 768px){
             flex-direction: column;
+            width: 100%;
         }
         .illustration,
         .text {
@@ -208,19 +212,21 @@ nav {
             flex-direction: column;
             justify-content: center;
             @media screen and (max-width: 768px){
-                flex-direction: column;
+                display: block;
                 
             }
             .hero_image {
                 height: 60%;
                 @media screen and (max-width: 768px){
-                    height: 100px;
+                    height: auto;
+                    width: 80%;
                 }
 
                 img {
                     height: 100%;
                     @media screen and (max-width: 768px){
-                        height: 100px;
+                        height: auto;
+                        width: 100%;
                     }
                 }
             }
