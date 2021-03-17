@@ -68,7 +68,7 @@ let vm = new Vue({
             this.resize()
         },
         next(e) {
-            if (!this.lock) {
+            if (!this.lock && window.innerWidth>=768) {
                 let story_blocks = document.querySelectorAll('.story_block')
                 if (e.deltaY > 0 && this.now_index < story_blocks.length - 1)
                     this.now_index++
@@ -92,15 +92,27 @@ let vm = new Vue({
             }
         },
         resize() {
-            setTimeout(function () {
+            if(window.innerWidth>=768){
+                setTimeout(function () {
+                    let w = document.querySelector('section').offsetWidth
+                    let contents = document.querySelectorAll('.content')
+                    let story_blocks = document.querySelectorAll('.story_block')
+                    for (let index = 0; index < contents.length; index++) {
+                        const content = contents[index];
+                        content.style.width = w - 100 * (story_blocks.length) + 'px'
+                    }
+                }, 300)
+            }
+            else{
                 let w = document.querySelector('section').offsetWidth
-                let contents = document.querySelectorAll('.content')
-                let story_blocks = document.querySelectorAll('.story_block')
-                for (let index = 0; index < contents.length; index++) {
-                    const content = contents[index];
-                    content.style.width = w - 100 * (story_blocks.length) + 'px'
-                }
-            }, 300)
+                    let contents = document.querySelectorAll('.content')
+                    let story_blocks = document.querySelectorAll('.story_block')
+                    for (let index = 0; index < contents.length; index++) {
+                        const content = contents[index];
+                        content.style.width = w + 'px'
+                    }
+            }
+            
         }
     }
 })
