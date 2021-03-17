@@ -159,6 +159,8 @@ nav ul li {
   .story_block {
     overflow: visible;
     width: 100%;
+    -webkit-transition: 0s;
+    transition: 0s;
   }
 }
 
@@ -209,6 +211,7 @@ nav ul li {
             flex-direction: column;
     width: 100%;
     padding: 15px;
+    trinsition: 0s;
   }
 }
 
