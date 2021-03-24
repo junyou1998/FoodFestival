@@ -58,6 +58,8 @@ let vm = new Vue({
             if(this.now_index>0)
                 story_blocks[this.now_index].querySelector('.title').classList.add('hide')
 
+                document.querySelector('#phoneNav').checked = false;
+
         },
         expend(index, event) {
             if(window.innerWidth>=768){
@@ -176,3 +178,5 @@ for (let index = 0; index < lists.length; index++) {
         ball.dom.classList.remove('grow')
     }
 }
+
+

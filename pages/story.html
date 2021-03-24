@@ -13,7 +13,7 @@
 
 <body>
     <div id="app">
-        <nav v-on:mouseover="resize" v-on:mouseleave="resize">
+        <nav v-on:mouseover="resize" v-on:mouseleave="resize" class="nav">
             <a class="logo" href="/">
                 <img src="/img/logo.svg" alt="">
             </a>
@@ -21,7 +21,7 @@
                 <li @click="change(0)">春節</li>
                 <li @click="change(1)">元宵節</li>
                 <li @click="change(2)">清明節</li>
-                <li id="test" @click="change(3)">端午節</li>
+                <li @click="change(3)">端午節</li>
                 <li @click="change(4)">七夕</li>
                 <li @click="change(5)">中元節</li>
                 <li @click="change(6)">中秋節</li>
@@ -29,6 +29,25 @@
                 <li @click="change(8)">冬至</li>
                 <li @click="change(9)">除夕</li>
             </ul>
+        </nav>
+
+        <nav id="nav-M">
+            <input class="hidden" type="checkbox" id="phoneNav" />
+            <label class="navBtn" for="phoneNav"><i></i><i></i><i></i></label>
+            <div class="nav-wrapper">
+                <ul>
+                    <li @click="change(0)">春節</li>
+                    <li @click="change(1)">元宵</li>
+                    <li @click="change(2)">清明</li>
+                    <li @click="change(3)">端午</li>
+                    <li @click="change(4)">七夕</li>
+                    <li @click="change(5)">中元</li>
+                    <li @click="change(6)">中秋</li>
+                    <li @click="change(7)">重陽</li>
+                    <li @click="change(8)">冬至</li>
+                    <li @click="change(9)">除夕</li>
+                </ul>
+            </div>
         </nav>
         <section @wheel="next">
             <div class="story_block expend" @click="expend(0,$event)">
