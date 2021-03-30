@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/freezeframe@3.0.10/build/css/freezeframe_styles.min.css">
+
+
 </head>
 
 <body>
@@ -49,7 +52,7 @@
                 </ul>
             </div>
         </nav>
-        <section @wheel="next">
+        <section @wheel="next" class="freezeframe">
             <div class="story_block expend" @click="expend(0,$event)">
                 <div class="tab">
                     <div class="title first">{{festival.festival}}</div>
@@ -83,6 +86,7 @@
     </div>
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
+    <script type="text/javascript" src="../js/freezeframe.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

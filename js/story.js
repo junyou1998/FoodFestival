@@ -46,10 +46,17 @@ let vm = new Vue({
                         vm.lock = false
                     }
                 }
+
+                new Freezeframe();
             })
     },
     methods: {
         change(index) {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+              });
             this.idx = index
             this.now_index = 0
             this.remove()
@@ -104,7 +111,7 @@ let vm = new Vue({
                     let story_blocks = document.querySelectorAll('.story_block')
                     for (let index = 0; index < contents.length; index++) {
                         const content = contents[index];
-                        content.style.width = w - 100 * (story_blocks.length) + 'px'
+                        content.style.width = w - 120 * (story_blocks.length) + 'px'
                     }
                 }, 300)
             }
@@ -178,5 +185,8 @@ for (let index = 0; index < lists.length; index++) {
         ball.dom.classList.remove('grow')
     }
 }
+
+
+
 
 
