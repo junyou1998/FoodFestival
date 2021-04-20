@@ -12,6 +12,7 @@ let vm = new Vue({
             },
             stories: [{
                 img: '',
+                gif: '',
                 title: '',
                 content: ''
             }]
@@ -47,7 +48,7 @@ let vm = new Vue({
                     }
                 }
 
-                new Freezeframe();
+                // new Freezeframe();
             })
     },
     methods: {
